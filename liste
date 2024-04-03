@@ -1,0 +1,29 @@
+friends = ['Sabrina', 'David', 'Rachel']
+
+# Pour obtenir les valeurs uniquement.
+# La variable 'friend_name' reçoit le contenu de la liste 'friends' à la position correspondante selon l'itération
+for friend_name in friends:
+    print(friend_name)
+
+print('-' * 50)
+
+# Pour obtenir les indexes seulement.
+# Utilisation de la fonction `format` pour une syntaxe plus traditionnelle et plus lisible
+for i in range(len(friends)):
+    print("{}. {}".format(i, friends[i]))
+
+print('-' * 50)
+
+# Pour obtenir les valeurs ET les indexes... fonction enumerate()
+# Ici il faut prévoir 2 variables pour recevoir le contenu de 'friends': la 1ere pour l'index, la 2e pour la valeur
+for index, value in enumerate(friends):
+    print("{}: {}".format(index, value))
+
+print('-' * 50)
+
+# Fonctionne aussi, mais 'non-Pythonic'... La plus part du temps on peut utiliser enumerate(), c'est plus simple.
+i = 0
+while i < len(friends):
+    print("{}: {}".format(i, friends[i]))
+    i += 1
+
