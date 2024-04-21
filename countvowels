@@ -1,0 +1,10 @@
+if __name__ == '__main__':
+    my_dic_vowels = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
+    string_input = input("Enter the phrase, sentence, or anything to start: ").lower()
+    
+    for char in string_input:
+        if char in my_dic_vowels:
+            my_dic_vowels[char] += 1
+    
+    print("The quantity of each vowel is: {}".format(my_dic_vowels))
+    print("The total quantity is: {}".format(sum(my_dic_vowels.values())))
