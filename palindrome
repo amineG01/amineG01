@@ -1,0 +1,10 @@
+def is_palindrome(s):
+    s = s.lower()  # Convertir en minuscules pour ignorer la casse
+    return s == s[::-1]
+if __name__ == '__main__':
+    print("Let's see if what you enter is a palindrome. You don't need to worry about uppercase or lowercase.")
+    string_input = input("Enter a word, phrase, or sentence: ")
+    if is_palindrome(string_input):
+        print("This is a palindrome!")
+    else:
+        print("This is NOT a palindrome :(")
