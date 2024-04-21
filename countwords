@@ -1,0 +1,16 @@
+def count_words(input_str):
+    words = input_str.split()
+    word_count = {}
+    
+    for word in words:
+        word_count[word] = word_count.get(word, 0) + 1
+    
+    return word_count
+
+if __name__ == '__main__':
+    input_str = input("Enter a word, phrase, or sentence: ")
+    words_dict = count_words(input_str)
+    
+    print("Word count:")
+    print(words_dict)
+    print("Total number of words: {}".format(sum(words_dict.values())))
