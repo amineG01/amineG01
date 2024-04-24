@@ -1,0 +1,46 @@
+import random
+
+possible_entries = ['rock', 'paper', 'scissor']
+score = {'user': 0, 'system': 0}  # Initialiser le score
+
+while True:
+    user_input = input("Enter your choice (rock, paper, scissor) or type 'quit' to exit: ")
+
+    if user_input == 'quit':
+        break
+
+    if user_input not in possible_entries:
+        print("Invalid choice. Please enter rock, paper, or scissor.")
+        continue
+
+    system_input = random.choice(possible_entries)
+
+    print("The user choice is", user_input, "\nThe system choice is", system_input)
+
+    if user_input == system_input:
+        print("Tie")
+    elif user_input == 'rock':
+        if system_input == 'paper':
+            print("You lost!!! Paper covers rock")
+            score['system'] += 1
+        else:
+            print("You won!!! Rock smashes scissor")
+            score['user'] += 1
+    elif user_input == 'paper':
+        if system_input == 'scissor':
+            print('You lost!!! Scissor cuts the paper')
+            score['system'] += 1
+        else:
+            print('You won!!! Paper covers the rock')
+            score['user'] += 1
+    elif user_input == 'scissor':
+        if system_input == 'rock':
+            print('You lost!!! Rock smashes the scissor')
+            score['system'] += 1
+        else:
+            print('You won!!! Scissor cuts the paper')
+            score['user'] += 1
+
+    print("Score: User - {}, System - {}".format(score['user'], score['system']))
+
+print("Game ended. Final Score: User - {}, System - {}".format(score['user'], score['system']))
